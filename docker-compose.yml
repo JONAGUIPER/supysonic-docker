@@ -1,0 +1,11 @@
+version: "3"
+services: 
+  supysonic:
+    image: jonaguiper/supysonic
+    container_name: "supysonic"
+    volumes:
+      - ./data:/data
+      - ./config:/config
+      - /home/jonander/Documentos/music:/music
+    ports:
+      - 8000:8000
