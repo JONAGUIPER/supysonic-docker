@@ -19,6 +19,7 @@ RUN apk --no-cache add  libjpeg-turbo \
                         lame \
                         mpg123 \
                         vorbis-tools \
+                        screen \
                         linux-headers
 ENV \
     UID=1000 \

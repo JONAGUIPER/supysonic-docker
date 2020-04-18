@@ -7,6 +7,10 @@ echo Changing owner of config dir
 echo Adding and scanning Library in /music
 supysonic-cli folder add Library /music
 supysonic-cli folder scan -f Library
+#iniciar daemon
+echo Creando demonio
+mkdir /var/supysonic
+screen -dmS supysonic-daemon /usr/local/bin/supysonic-daemon
 
 gunicorn app --worker-tmp-dir /dev/shm --bind 0.0.0.0 -w ${WORKERS:-4} -t ${TIMEOUT:-180}
 # sleep 4
